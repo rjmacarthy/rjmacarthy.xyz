@@ -1,0 +1,72 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title rjmacarthy.xyz
+    link(href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet")
+    style.
+      body {
+        background-color: #1e1e2e;
+        color: #cdd6f4;
+        font-family: 'Fira Code', monospace;
+        font-size: 14px;
+        line-height: 1.6;
+        padding: 20px;
+      }
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+      .prompt {
+        color: #a6e3a1;
+        margin-bottom: 5px;
+      }
+      .prompt::before {
+        content: "$ ";
+        color: #f38ba8;
+      }
+      .output {
+        color: #89dceb;
+        margin-bottom: 10px;
+      }
+      @keyframes blink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0; }
+      }
+      .cursor {
+        display: inline-block;
+        width: 8px;
+        height: 15px;
+        background-color: #cdd6f4;
+        animation: blink 1s step-end infinite;
+        vertical-align: middle;
+      }
+      a {
+        color: #f9e2af;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+  body
+    .container
+      p.prompt whoami
+      p.output rj
+      p.prompt cat status.txt
+      p.output Working remotely.
+      p.prompt ls -l projects/
+      p.output
+        | drwxr-xr-x 2 rj rj 4096 
+        a(href="https://twinny.dev", target="_blank") twinny.dev
+      p.prompt echo $FOCUS
+      p.output front-end, bitcoin, ai, linux
+      p.prompt xdg-open https://x.com/rjmacarthy
+      p.output Opening 
+        a(href="https://x.com/rjmacarthy", target="_blank") @rjmacarthy
+      p.prompt mail -s "opportunity" richardmacarthy@protonmail.com
+      p.output
+        | Composing email to 
+        a(href="mailto:richardmacarthy@protonmail.com") richardmacarthy@protonmail.com
+      p.prompt
+       span.cursor
